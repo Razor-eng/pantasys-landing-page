@@ -5,14 +5,14 @@ const apps = [
   { name: "CRM", icon: "💎", color: "bg-teal-100" },
   { name: "Studio", icon: "⚡", color: "bg-indigo-100" },
   { name: "Subscriptions", icon: "🔄", color: "bg-orange-100" },
-  
+
   { name: "Rental", icon: "🔑", color: "bg-red-100" },
   { name: "Point of Sale", icon: "🏪", color: "bg-yellow-100" },
   { name: "Discuss", icon: "💬", color: "bg-orange-100" },
   { name: "Documents", icon: "📁", color: "bg-blue-100" },
   { name: "Project", icon: "✅", color: "bg-green-100" },
   { name: "Timesheets", icon: "⏰", color: "bg-gray-100" },
-  
+
   { name: "Field Service", icon: "⚡", color: "bg-purple-100" },
   { name: "Planning", icon: "📋", color: "bg-yellow-100" },
   { name: "Helpdesk", icon: "🏥", color: "bg-teal-100" },
@@ -35,7 +35,9 @@ const AppGrid = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="bg-card border border-border rounded-2xl p-6 text-center shadow-soft hover:shadow-medium group-hover:bg-card-gradient">
-                  <div className={`w-16 h-16 ${app.color} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                  <div
+                    className={`w-16 h-16 ${app.color} rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 group-hover:scale-110 transition-transform`}
+                  >
                     {app.icon}
                   </div>
                   <h3 className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
@@ -48,15 +50,41 @@ const AppGrid = () => {
 
           {/* Bottom text */}
           <div className="text-center mt-16">
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
-              From your contacts to your closing dates, from your vendors to your P&L, 
-              one single platform brings together all your teams and business activities.
-            </p>
-            <div className="mt-8">
-              <a href="#" className="text-primary hover:underline font-medium">
-                Browse all apps →
+            <div className="flex items-center justify-between mt-8 mb-8">
+              <div className="flex items-center space-x-3">
+                <div className="flex space-x-1">
+                  <div className="w-3 h-3 bg-teal-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-foreground rounded-full mt-0.5"></div>
+                </div>
+                <span className="text-muted-foreground">
+                  Imagine without odoo
+                </span>
+              </div>
+              <a
+                href="#"
+                className="text-primary hover:underline font-medium flex items-center"
+              >
+                View all Apps
+                <svg
+                  className="ml-2 w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
               </a>
             </div>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto leading-relaxed">
+              From your contacts to your closing dates, from your vendors to
+              your P&L, one single platform brings together all your teams and
+              business activities.
+            </p>
           </div>
         </div>
       </div>

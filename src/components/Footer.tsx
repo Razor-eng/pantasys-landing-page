@@ -5,20 +5,47 @@ const Footer = () => {
     <footer className="bg-foreground text-background">
       {/* CTA Section */}
       <div className="py-20">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container relative mx-auto px-4 text-center">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+            <div className="flex space-x-2">
+              <div className="w-8 h-1 bg-accent-orange transform rotate-12"></div>
+              <div className="w-6 h-1 bg-accent-orange transform rotate-45"></div>
+              <div className="w-4 h-1 bg-accent-orange transform -rotate-12"></div>
+            </div>
+          </div>
+
           <h2 className="text-4xl md:text-5xl font-light mb-8">
-            <span className="handwritten text-5xl md:text-6xl text-accent-orange font-bold">
+            <span className="handwritten text-5xl md:text-7xl text-accent-orange font-bold">
               Unleash
             </span>
             <br />
             your growth potential!
           </h2>
           <p className="text-xl text-background/80 mb-8 max-w-2xl mx-auto">
-            Ready to transform your business? Start your free trial today and see why millions choose Odoo.
+            Ready to transform your business? Start your free trial today and
+            see why millions choose Odoo.
           </p>
           <Button className="bg-accent-orange hover:bg-accent-orange/90 text-accent-orange-foreground px-8 py-3 text-lg font-medium">
             Start for free
           </Button>
+          <div className="flex flex-col items-center mt-6 space-y-2">
+            <div className="flex items-center text-teal-500">
+              <svg
+                className="w-4 h-4 mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span className="text-sm">No credit card required</span>
+            </div>
+            <div className="text-sm text-muted-foreground">Instant access</div>
+          </div>
         </div>
       </div>
 
@@ -30,10 +57,38 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-background mb-4">Company</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">About</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Jobs</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Press</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Partners</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Jobs
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Press
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Partners
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -41,10 +96,38 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-background mb-4">Products</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Sales</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Accounting</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Inventory</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">CRM</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Sales
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Accounting
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Inventory
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    CRM
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -52,10 +135,38 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-background mb-4">Resources</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Documentation</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Training</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Support</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Community</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Documentation
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Training
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Support
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Community
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -63,10 +174,38 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-background mb-4">Support</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Help Center</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Contact</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Bug Report</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Feature Request</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Help Center
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Contact
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Bug Report
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Feature Request
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -74,10 +213,38 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-background mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Privacy</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Terms</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Security</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Compliance</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Terms
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Security
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Compliance
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -85,10 +252,38 @@ const Footer = () => {
             <div>
               <h3 className="font-semibold text-background mb-4">Follow Us</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Twitter</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">Facebook</a></li>
-                <li><a href="#" className="text-background/80 hover:text-background transition-colors">YouTube</a></li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    YouTube
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
