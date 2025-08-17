@@ -7,7 +7,6 @@ import DevicesSection from "@/components/DevicesSection";
 import EnterpriseSection from "@/components/EnterpriseSection";
 import UsersSection from "@/components/UsersSection";
 import Footer from "@/components/Footer";
-import LevelUpSection from "@/components/LevelUpSection";
 
 const Index = () => {
   return (
@@ -15,7 +14,6 @@ const Index = () => {
       <Header />
       <Hero />
       <AppGrid />
-      <LevelUpSection />
       <QualitySection />
       <ProductivitySection />
       <DevicesSection />
