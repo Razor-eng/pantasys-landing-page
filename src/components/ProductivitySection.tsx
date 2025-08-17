@@ -1,18 +1,24 @@
+import { useInView } from 'react-intersection-observer';
+
 const ProductivitySection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="py-20 bg-background">
+    <section ref={ref} className={`py-20 bg-background ${inView ? 'stagger-in' : ''}`}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-light text-foreground mb-6">
-              <span className="handwritten text-5xl md:text-6xl orange-highlight">
+              <span className="handwritten text-5xl md:text-6xl indigo-highlight">
                 Optimized
               </span>{" "}
               for productivity
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every feature is designed to help your teams work more efficiently
-              and get more done.
+              Streamline your workflows with Pantasys’ integrated modules and automation features.
             </p>
           </div>
 
@@ -40,10 +46,10 @@ const ProductivitySection = () => {
                   {/* Stats Cards */}
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {[
-                      { title: "Revenue", value: "$124,500", trend: "+12%" },
-                      { title: "Orders", value: "2,345", trend: "+8%" },
-                      { title: "Customers", value: "15,678", trend: "+23%" },
-                      { title: "Growth", value: "34.5%", trend: "+5%" },
+                      { title: "Revenue", value: "₹1,24,500", trend: "+12%" },
+                      { title: "Leads", value: "2,345", trend: "+8%" },
+                      { title: "Clients", value: "15,678", trend: "+23%" },
+                      { title: "Courses", value: "34", trend: "+5%" },
                     ].map((stat, index) => (
                       <div key={index} className="bg-muted/50 rounded-xl p-4">
                         <div className="text-sm text-muted-foreground mb-1">
@@ -83,8 +89,8 @@ const ProductivitySection = () => {
                       </div>
                       <div className="space-y-3">
                         {[
-                          "New order received",
-                          "Customer support ticket",
+                          "New lead added",
+                          "Course completed",
                           "Invoice generated",
                           "Payment processed",
                         ].map((activity, index) => (
@@ -105,7 +111,7 @@ const ProductivitySection = () => {
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent-orange/20 rounded-full floating"></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent-indigo/20 rounded-full floating"></div>
               <div
                 className="absolute -bottom-4 -left-4 w-12 h-12 bg-primary/20 rounded-full floating"
                 style={{ animationDelay: "1s" }}
@@ -114,11 +120,11 @@ const ProductivitySection = () => {
 
             {/* Task Preview */}
             <div className="relative">
-              {/* Orange accent lines */}
-              <div className="absolute top-0 left-0 w-32 h-1 bg-accent-orange rounded-full"></div>
-              <div className="absolute top-20 right-0 w-24 h-1 bg-accent-orange rounded-full"></div>
-              <div className="absolute bottom-0 left-1/4 w-40 h-1 bg-accent-orange rounded-full"></div>
-              <div className="absolute bottom-20 right-1/3 w-16 h-1 bg-accent-orange rounded-full"></div>
+              {/* Indigo accent lines */}
+              <div className="absolute top-0 left-0 w-32 h-1 bg-accent-indigo rounded-full"></div>
+              <div className="absolute top-20 right-0 w-24 h-1 bg-accent-indigo rounded-full"></div>
+              <div className="absolute bottom-0 left-1/4 w-40 h-1 bg-accent-indigo rounded-full"></div>
+              <div className="absolute bottom-20 right-1/3 w-16 h-1 bg-accent-indigo rounded-full"></div>
 
               {/* Interface mockups */}
               <div className="grid lg:grid-cols-12 gap-8 items-center">
@@ -135,19 +141,19 @@ const ProductivitySection = () => {
                     <div className="space-y-2 text-xs">
                       <div className="flex items-center space-x-2 p-2 bg-red-50 rounded">
                         <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                        <span>Event - 0 Late, 1 Today</span>
+                        <span>Tasks - 0 Late, 1 Today</span>
                       </div>
                       <div className="flex items-center space-x-2 p-2">
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <span>Time Off - 0 Late, 1 Today</span>
+                        <span>Training - 0 Late, 1 Today</span>
                       </div>
                       <div className="flex items-center space-x-2 p-2">
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <span>Time Off Allocation - 0 Late, 6 Today</span>
+                        <span>Invoices - 0 Late, 6 Today</span>
                       </div>
                       <div className="flex items-center space-x-2 p-2">
                         <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                        <span>Journal Entry - 0 Late, 2 Today</span>
+                        <span>Assets - 0 Late, 2 Today</span>
                       </div>
                     </div>
                   </div>
@@ -159,11 +165,11 @@ const ProductivitySection = () => {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-card rounded-2xl p-6 shadow-medium">
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="font-semibold">Final Check</h3>
+                        <h3 className="font-semibold">Lead Review</h3>
                         <span className="text-2xl">📋</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-2 mb-4">
-                        <div className="w-3/4 bg-orange-400 h-2 rounded-full"></div>
+                        <div className="w-3/4 bg-indigo-400 h-2 rounded-full"></div>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="w-6 h-6 bg-muted rounded-full"></div>
@@ -173,15 +179,15 @@ const ProductivitySection = () => {
 
                     <div className="bg-card rounded-2xl p-6 shadow-medium">
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="font-semibold">Bathroom</h3>
-                        <span className="text-2xl">🚿</span>
+                        <h3 className="font-semibold">Course Design</h3>
+                        <span className="text-2xl">📚</span>
                       </div>
                       <div className="space-y-2 mb-4">
                         <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-xs">
-                          1st floor
+                          LMS Module
                         </span>
                         <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
-                          Design
+                          In Progress
                         </span>
                       </div>
                       <div className="flex items-center space-x-2">
@@ -190,11 +196,11 @@ const ProductivitySection = () => {
                     </div>
                   </div>
 
-                  {/* Floor plans */}
+                  {/* Asset Management */}
                   <div className="bg-card rounded-2xl p-6 shadow-medium">
-                    <h3 className="font-semibold mb-4">Plans</h3>
+                    <h3 className="font-semibold mb-4">Asset Overview</h3>
                     <div className="bg-muted/30 rounded-xl p-4 h-48 flex items-center justify-center">
-                      <div className="text-4xl">🏗️</div>
+                      <div className="text-4xl">🏢</div>
                     </div>
                   </div>
                 </div>
@@ -211,7 +217,7 @@ const ProductivitySection = () => {
                       <div className="flex items-start space-x-2">
                         <div className="w-6 h-6 bg-muted rounded-full"></div>
                         <div>
-                          <div className="font-medium">OdooBot</div>
+                          <div className="font-medium">PantasysBot</div>
                           <div className="text-muted-foreground">
                             Welcome to the #general channel.
                           </div>
@@ -221,9 +227,9 @@ const ProductivitySection = () => {
                       <div className="flex items-start space-x-2">
                         <div className="w-6 h-6 bg-muted rounded-full"></div>
                         <div>
-                          <div className="font-medium">Marc Demo</div>
+                          <div className="font-medium">Team Lead</div>
                           <div className="text-muted-foreground">
-                            Building B3, second floor to the right
+                            New assets added to tenant A’s inventory.
                           </div>
                         </div>
                       </div>
@@ -235,13 +241,13 @@ const ProductivitySection = () => {
               {/* Bottom text */}
               <div className="text-center mt-16">
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  <strong>Experience true speed</strong>, reduced data entry,
+                  <strong>Experience true efficiency</strong>, with seamless workflows,
                 </p>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  smart AI, and a fast UI. All operations are done
+                  AI-driven automation, and a unified interface. Operations run
                 </p>
                 <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  in less than 90ms - faster than a blink.
+                  faster than ever with Pantasys.
                 </p>
 
                 {/* Video button */}
@@ -251,7 +257,7 @@ const ProductivitySection = () => {
                       <span className="text-sm">▶️</span>
                     </div>
                     <span className="handwritten text-lg">
-                      Compare with SAP
+                      See Pantasys in Action
                     </span>
                   </button>
                 </div>

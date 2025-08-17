@@ -1,36 +1,45 @@
 import { Button } from "@/components/ui/button";
+import { useInView } from "react-intersection-observer";
 
 const Footer = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
-    <footer className="bg-foreground text-background">
+    <footer
+      ref={ref}
+      className={`bg-foreground text-background ${inView ? "stagger-in" : ""}`}
+    >
       {/* CTA Section */}
       <div className="py-20">
         <div className="container relative mx-auto px-4 text-center">
           {/* Decorative elements */}
           <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
             <div className="flex space-x-2">
-              <div className="w-8 h-1 bg-accent-orange transform rotate-12"></div>
-              <div className="w-6 h-1 bg-accent-orange transform rotate-45"></div>
-              <div className="w-4 h-1 bg-accent-orange transform -rotate-12"></div>
+              <div className="w-8 h-1 bg-accent-indigo transform rotate-12"></div>
+              <div className="w-6 h-1 bg-accent-indigo transform rotate-45"></div>
+              <div className="w-4 h-1 bg-accent-indigo transform -rotate-12"></div>
             </div>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-light mb-8">
-            <span className="handwritten text-5xl md:text-7xl text-accent-orange font-bold">
-              Unleash
+            <span className="handwritten text-5xl md:text-7xl text-accent-indigo font-bold">
+              Transform
             </span>
             <br />
-            your growth potential!
+            your business today!
           </h2>
           <p className="text-xl text-background/80 mb-8 max-w-2xl mx-auto">
-            Ready to transform your business? Start your free trial today and
-            see why millions choose Odoo.
+            Ready to streamline your operations? Start your free trial with
+            Pantasys and experience modular excellence.
           </p>
-          <Button className="bg-accent-orange hover:bg-accent-orange/90 text-accent-orange-foreground px-8 py-3 text-lg font-medium">
+          <Button className="bg-accent-indigo hover:bg-accent-indigo/90 text-accent-indigo-foreground px-8 py-3 text-lg font-medium">
             Start for free
           </Button>
           <div className="flex flex-col items-center mt-6 space-y-2">
-            <div className="flex items-center text-teal-500">
+            <div className="flex items-center text-teal-400">
               <svg
                 className="w-4 h-4 mr-2"
                 fill="currentColor"
@@ -70,7 +79,7 @@ const Footer = () => {
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Jobs
+                    Careers
                   </a>
                 </li>
                 <li>
@@ -78,7 +87,7 @@ const Footer = () => {
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Press
+                    News
                   </a>
                 </li>
                 <li>
@@ -92,16 +101,24 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Products */}
+            {/* Modules */}
             <div>
-              <h3 className="font-semibold text-background mb-4">Products</h3>
+              <h3 className="font-semibold text-background mb-4">Modules</h3>
               <ul className="space-y-2">
                 <li>
                   <a
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Sales
+                    CRM
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="text-background/80 hover:text-background transition-colors"
+                  >
+                    LMS
                   </a>
                 </li>
                 <li>
@@ -117,15 +134,7 @@ const Footer = () => {
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Inventory
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-background/80 hover:text-background transition-colors"
-                  >
-                    CRM
+                    Asset Management
                   </a>
                 </li>
               </ul>
@@ -148,7 +157,7 @@ const Footer = () => {
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Training
+                    Guides
                   </a>
                 </li>
                 <li>
@@ -156,7 +165,7 @@ const Footer = () => {
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Support
+                    API Reference
                   </a>
                 </li>
                 <li>
@@ -273,7 +282,7 @@ const Footer = () => {
                     href="#"
                     className="text-background/80 hover:text-background transition-colors"
                   >
-                    Facebook
+                    GitHub
                   </a>
                 </li>
                 <li>
@@ -295,8 +304,12 @@ const Footer = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center space-x-6 mb-4 md:mb-0">
-              <span className="text-2xl font-bold text-background">odoo</span>
-              <span className="text-background/60">© 2024 Odoo S.A.</span>
+              <span className="text-2xl font-bold text-background">
+                Pantasys
+              </span>
+              <span className="text-background/60">
+                © 2025 Pantasys Technologies
+              </span>
             </div>
             <div className="flex items-center space-x-4">
               <select className="bg-transparent border border-background/20 rounded px-3 py-1 text-background text-sm">
